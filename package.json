@@ -1,0 +1,62 @@
+{
+  "name": "@agentuse/mcp-slack-webhook",
+  "version": "1.0.5",
+  "description": "MCP server for sending messages to Slack webhooks",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mcp-slack-webhook": "dist/index.js"
+  },
+  "preferGlobal": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build",
+    "publish:npm": "npm publish",
+    "publish:dry-run": "npm publish --dry-run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "slack",
+    "webhook",
+    "model-context-protocol",
+    "ai",
+    "chatbot",
+    "automation",
+    "typescript"
+  ],
+  "author": "Leon Ho",
+  "license": "MIT",
+  "homepage": "https://github.com/agentuse/mcp-slack-webhook.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentuse/mcp-slack-webhook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agentuse/mcp-slack-webhook/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "shx": "^0.4.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
+}
